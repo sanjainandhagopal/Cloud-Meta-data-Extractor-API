@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "streamfetch"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+pandas = "^2.2.1"
+requests = "^2.31.0"
+click = "^8.1.7"
+chardet = "^5.2.0"
+python-magic = "^0.4.27"
+object-store-python = "^0.1.10"
+fsspec = "^2024.2.0"
+s3fs = "^2024.2.0"
+adlfs = "^2024.2.0"
+azure-identity = "^1.15.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+flake8 = "^7.0.0"
+flake8-pyproject = "^1.2.3"
+pytest = "^8.0.2"
+pre-commit = "^3.6.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+streamfetch = 'streamfetch.cli:main'
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.flake8]
+max-line-length = 120
+
+
